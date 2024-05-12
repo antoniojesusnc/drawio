@@ -1,11 +1,13 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 
 public class DailyRewardView : View<DailyRewardView>
 {
-    [SerializeField] 
-    private Transform _scrollParent;
-    
+    [SerializeField] private Transform _scrollParent;
+
     private DailyRewardConfig _config;
+
+    private bool _claimed = false;
 
     void Start()
     {
@@ -43,6 +45,34 @@ public class DailyRewardView : View<DailyRewardView>
             case GamePhase.DAILY_REWARD:
                 Transition(true);
                 break;
+            case GamePhase.MAIN_MENU:
+                if (m_Group.alpha > 0)
+                {
+                    Transition(false);
+                }
+                break;
         }
+    }
+
+    public void OnClickClaim()
+    {
+        if (!_claimed)
+        {
+            DailyRewardManager.Instance.Claim();
+            _claimed = true;
+            ClaimAnimation();
+        }
+
+        DOVirtual.DelayedCall(_config.AnimationDuration, Close);
+    }
+
+    private void Close()
+    {
+        GameManager.Instance.ChangePhase(GamePhase.MAIN_MENU);
+    }
+
+
+    private void ClaimAnimation()
+    {
     }
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Text;
+using deVoid.Utils;
 
 public class StatsManager : SingletonMB<StatsManager>
 {
@@ -179,6 +180,7 @@ public class StatsManager : SingletonMB<StatsManager>
 	public void AddCoins(int coinsToAdd)
 	{
 		PlayerPrefs.SetInt(Constants.c_PlayerCoins, GetCoins()+coinsToAdd);
+		Signals.Get<OnCoinIncreasedEvent>().Dispatch(coinsToAdd);
 	}
 
 	#endregion

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using deVoid.Utils;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,7 +29,16 @@ public class DailyRewardItemView : MonoBehaviour
     {
         _dailyRewardConfigData = dailyRewardConfigData;
 
+        Signals.Get<OnClaimDailyRewardEvent>().AddListener(OnClaimDailyReward);
         SetData();
+    }
+
+    private void OnClaimDailyReward(DailyRewardConfigData configData)
+    {
+        if (configData == _dailyRewardConfigData)
+        {
+            SetAsClaimed(true);
+        }
     }
 
     private void SetData()

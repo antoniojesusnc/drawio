@@ -6,6 +6,9 @@ using UnityEngine;
 public class DailyRewardConfig : ScriptableObject
 {
     [field: SerializeField] 
+    public float AnimationDuration { get; private set; }
+    
+    [field: SerializeField] 
     public DailyRewardItemView DailyRewardItemPrefab { get; private set; }
     
     [field: SerializeField]

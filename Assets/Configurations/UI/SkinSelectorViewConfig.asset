@@ -15,7 +15,7 @@ MonoBehaviour:
   <ElementsPerRow>k__BackingField: 3
   <SkinSelectorItemViewPrefab>k__BackingField: {fileID: -7474367324894588069, guid: 69bacdea3a10fe54eb52abf1311efce4,
     type: 3}
-  SkinSelectorItems:
+  <SkinSelectorItems>k__BackingField:
   - {fileID: 11400000, guid: c0c8c7f76e24f4d12b4d21ac4d5ecddd, type: 2}
   - {fileID: 11400000, guid: 6c81327b894be44b1affe0c7bbf85512, type: 2}
   - {fileID: 11400000, guid: 3bb27309ccc7c4ac78e99ede67fc7e81, type: 2}

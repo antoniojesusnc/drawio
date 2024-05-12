@@ -1,4 +1,5 @@
 ﻿using System;
+using deVoid.Utils;
 using UnityEngine;
 
 public class DailyRewardManager : SingletonMB<DailyRewardManager>
@@ -22,8 +23,10 @@ public class DailyRewardManager : SingletonMB<DailyRewardManager>
         {
             return;
         }
-        
-        GameManager.Instance.ChangePhase(GamePhase.DAILY_REWARD);
+        else
+        {
+            GameManager.Instance.ChangePhase(GamePhase.DAILY_REWARD);
+        }
     }
 
     private void LoadLastClaimedData()
@@ -34,25 +37,25 @@ public class DailyRewardManager : SingletonMB<DailyRewardManager>
 
     private void CheckIfClaimReward()
     {
-        
-        
         if (_lastClaimed.Date == DateTime.UtcNow.AddDays(-1).Date)
         {
             _currentIndex = PlayerPrefs.GetInt(Constants.c_DailyRewardLastClaimedIndexKey, 0);
         }
     }
 
-    private void Claim()
+    public void Claim()
     {
-        SaveClaimData();
-
         var dailyRewardConfigData = DailyRewardConfig.DailyReward[_currentIndex];
         StatsManager.Instance.AddCoins(dailyRewardConfigData.Reward);
+        
+        _currentIndex++;
+        SaveClaimData();
+        
+        Signals.Get<OnClaimDailyRewardEvent>().Dispatch(dailyRewardConfigData);
     }
 
     private void SaveClaimData()
     {
-        _currentIndex++;
         _lastClaimed = DateTime.UtcNow;
         PlayerPrefs.SetInt(Constants.c_DailyRewardLastClaimedIndexKey, _currentIndex);
         PlayerPrefs.SetString(Constants.c_DailyRewardLastClaimedDataKey, _lastClaimed.ToString());
