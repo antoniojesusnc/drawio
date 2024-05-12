@@ -54,7 +54,7 @@ public class SkinSelectorItemView : MonoBehaviour
 
     private void CheckIfUnblock()
     {
-        if (_skinData.Cost <= 0 || StatsManager.Instance.IsPurchased(_skinData) || FeatureManager.Instance.UseStoreItems)
+        if (_skinData.Cost <= 0 || StatsManager.Instance.IsPurchased(_skinData) || !FeatureManager.Instance.UseStoreItems)
         {
             Unlock();
         }

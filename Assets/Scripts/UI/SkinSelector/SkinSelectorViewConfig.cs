@@ -5,7 +5,7 @@ using UnityEngine;
 public class SkinSelectorViewConfig : ScriptableObject
 {
     [field: SerializeField]
-    public int ElementsPerRow { get; private set; }
+    public int ElementsPerColum { get; private set; }
     
     [field: SerializeField]
     public SkinSelectorItemView SkinSelectorItemViewPrefab { get; private set; }

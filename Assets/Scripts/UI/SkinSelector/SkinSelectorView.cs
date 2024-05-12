@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,18 +28,20 @@ public class SkinSelectorView : View<SkinSelectorView>
     {
         InitBrush();
         GenerateBrushItems();
-        GridAutoSize();
+        
+        // the size spend one frame in calculate
+        DOVirtual.DelayedCall(0.1f, GridAutoSize);
     }
 
     private void GridAutoSize()
     {
-        var size = GetComponent<RectTransform>().rect.size;
+        var size = _scrollParent.GetComponent<RectTransform>().rect.size;
 
-        var cellSize = (size.x - _gridLayoutGroup.padding.left - _gridLayoutGroup.padding.right -
-                     _gridLayoutGroup.spacing.x*(_config.ElementsPerRow-1)) / _config.ElementsPerRow;
+        var cellSize = (size.y - _gridLayoutGroup.padding.top - _gridLayoutGroup.padding.bottom -
+                     _gridLayoutGroup.spacing.y*(_config.ElementsPerColum-1)) / _config.ElementsPerColum;
         _gridLayoutGroup.cellSize = new Vector2(cellSize, cellSize);
-        _gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
-        _gridLayoutGroup.constraintCount = _config.ElementsPerRow;
+        _gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedRowCount;
+        _gridLayoutGroup.constraintCount = _config.ElementsPerColum;
     }
 
     private void InitBrush()

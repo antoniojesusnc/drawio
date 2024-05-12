@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899743def449aa54e8548d952330e65d, type: 3}
   m_Name: SkinSelectorViewConfig
   m_EditorClassIdentifier: 
-  <ElementsPerRow>k__BackingField: 3
+  <ElementsPerColum>k__BackingField: 3
   <SkinSelectorItemViewPrefab>k__BackingField: {fileID: -7474367324894588069, guid: 69bacdea3a10fe54eb52abf1311efce4,
     type: 3}
   <SkinSelectorItems>k__BackingField:
