@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 2110753356884851668}
   - component: {fileID: 8432753753208607678}
   - component: {fileID: 3685537461265184862}
+  - component: {fileID: 4978342563568847722}
   m_Layer: 5
   m_Name: CoinCounterView
   m_TagString: Untagged
@@ -229,6 +230,27 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &4978342563568847722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7337570157564988268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e55ae1441ff4583859c55384964d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ParticleSystem: {fileID: 0}
+  m_DestinationRadius: 1
+  m_DelayRate: 0.2
+  m_MaxSpeed: 10
+  m_Movement: 2
+  m_UpdateMode: 0
+  m_OnAttracted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8442646755424484140
 GameObject:
   m_ObjectHideFlags: 0
