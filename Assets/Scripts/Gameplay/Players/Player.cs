@@ -271,14 +271,16 @@ public abstract class Player : MappedObject, IDrawLine
 	{
 		float size = GetSize () * 1.2f + 4f;
 
-		ComputeSubCollisions(m_Transform.position, size);
+		ComputeRadiusSubCollisions(m_Transform.position, size);
+		ComputeCloseSubCollisions(m_Transform.position, GetSize());
+		
 		for (int i = 0; i < m_BrushesFollowing.Count; ++i)
 		{
-			ComputeSubCollisions(m_BrushesFollowing[i].transform.position, size);
+			ComputeRadiusSubCollisions(m_BrushesFollowing[i].transform.position, size);
 		}      
 	}
-
-    private void ComputeSubCollisions(Vector3 center, float size)
+	
+	private void ComputeRadiusSubCollisions(Vector3 center, float size)
 	{
         if (isDead == true)
             return;
@@ -286,14 +288,57 @@ public abstract class Player : MappedObject, IDrawLine
 		MapManager.FindEntities(center, size * size, ref m_SearchBuffer);
 
         for (int i = 0; i < m_SearchBuffer.Count; ++i)
-        {         
-            PowerUp powerUp = m_SearchBuffer[i].GetComponent<PowerUp>();
-            if (powerUp != null && powerUp.ready)
-                GetPowerUp(powerUp);
+        {
+	        CheckForPowerUp(m_SearchBuffer[i]);
         }
 	}
+	
+	private void ComputeCloseSubCollisions(Vector3 center, float size)
+	{
+		if (isDead == true)
+			return;
 
-    protected virtual void Kill(Player _Player)
+		MapManager.FindEntities(center, size * size, ref m_SearchBuffer);
+
+		for (int i = 0; i < m_SearchBuffer.Count; ++i)
+		{
+			CheckForPlayer(m_SearchBuffer[i]);
+		}
+	}
+
+	private void CheckForPowerUp(GameObject collisionGameObject)
+	{
+		PowerUp powerUp = collisionGameObject.GetComponent<PowerUp>();
+		if (powerUp != null && powerUp.ready)
+			GetPowerUp(powerUp);
+	}
+	
+	private void CheckForPlayer(GameObject collisionGameObject)
+	{
+		Player player = collisionGameObject.GetComponent<Player>();
+		if (player != null && player != this)
+			PushAway(player);
+	}
+
+	public void PushAway(Player otherPlayer, bool pushOtherPlayer = true)
+	{
+		var finalPos = transform.position -
+		               (otherPlayer.transform.position - transform.position).normalized * otherPlayer.GetSize();
+		finalPos.Set(finalPos.x, transform.position.y, finalPos.z);
+		SetFinalPosition(finalPos);
+		if (pushOtherPlayer)
+		{
+			otherPlayer.PushAway(this, pushOtherPlayer:false);
+		}
+	}
+
+	protected void SetFinalPosition(Vector3 position)
+	{
+		ClampPosition(ref position);
+		m_Transform.position = position;
+	}
+
+	protected virtual void Kill(Player _Player)
     {
         _Player.Killed();
         m_TerrainManager.FillCircle(this, _Player.m_Transform.position, Constants.c_KillPlayerSplashRadius, Constants.c_KillPlayerSplashDuration);

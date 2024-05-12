@@ -48,8 +48,9 @@ public class HumanPlayer : Player, IDirectionController
         m_Direction = m_Transform.forward * m_Input.magnitude;
 
         Vector3 endPos = m_Transform.position + m_Direction * Time.deltaTime;
-        ClampPosition(ref endPos);
-        m_Transform.position = endPos;
+
+        SetFinalPosition(endPos);
+        
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.A))
 		{

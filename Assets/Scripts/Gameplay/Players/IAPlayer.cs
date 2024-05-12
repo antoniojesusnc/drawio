@@ -237,8 +237,7 @@ public class IAPlayer : Player
 
 		Vector3 pos = m_Transform.position;
 		pos += m_Direction * Time.deltaTime;
-		ClampPosition(ref pos);
-		m_Transform.position = pos;
+		SetFinalPosition(pos);
 
 		m_Transform.rotation = Quaternion.LookRotation (m_Forward);
 
@@ -248,7 +247,7 @@ public class IAPlayer : Player
         return false;
     }
 
-	bool CloseToEdges() {
+    bool CloseToEdges() {
         return (m_TerrainManager.NearEdge(m_Transform.position, c_WarningEdgeDistance));
 	}
 
