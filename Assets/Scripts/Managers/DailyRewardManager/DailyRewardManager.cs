@@ -23,7 +23,8 @@ public class DailyRewardManager : SingletonMB<DailyRewardManager>
         {
             return;
         }
-        else
+        
+        if(_currentIndex <= DailyRewardConfig.DailyReward.Count)
         {
             GameManager.Instance.ChangePhase(GamePhase.DAILY_REWARD);
         }
