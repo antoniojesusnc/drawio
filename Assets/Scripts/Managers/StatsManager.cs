@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using System.Text;
 using deVoid.Utils;
 
 public class StatsManager : SingletonMB<StatsManager>
 {
+	private const string PURCHASED_SKIN_TO_STRING_FORMAT = "{0}_{1}";
+	private const char PURCHASED_SKIN_SEPARATOR_CHAR = '#';
+	
 	public List<int>    m_XPForLevel;
 	public int          m_LastGain = 0;
 
@@ -183,5 +185,40 @@ public class StatsManager : SingletonMB<StatsManager>
 		Signals.Get<OnCoinIncreasedEvent>().Dispatch(coinsToAdd);
 	}
 
-	#endregion
+	#endregion Coins
+
+	#region Skins
+
+	public bool IsPurchased(SkinData skinData)
+	{
+		return GetPurchasedSkins().Exists(purchasedSkins => purchasedSkins.Equals(ConvertToString(skinData)));
+	}
+
+	private string ConvertToString(SkinData skinData) =>
+		string.Format(PURCHASED_SKIN_TO_STRING_FORMAT, skinData.Brush.name, skinData.Color.name);
+
+	private List<string> GetPurchasedSkins()
+	{
+		var rawList = PlayerPrefs.GetString(Constants.c_PurchasedSkins, "{}");
+		return new List<string>(rawList.Split((PURCHASED_SKIN_SEPARATOR_CHAR)));
+	}
+
+	public bool CanPurchase(SkinData skinData)
+	{
+		return skinData.Cost <= GetCoins();
+	}
+	
+
+	public void Purchase(SkinData skinData)
+	{
+		AddCoins(-skinData.Cost);
+		
+		var purchasedSkins = GetPurchasedSkins();
+		purchasedSkins.Add(ConvertToString(skinData));
+		PlayerPrefs.SetString(Constants.c_PurchasedSkins, string.Join(PURCHASED_SKIN_SEPARATOR_CHAR.ToString(), purchasedSkins));
+		
+		Signals.Get<OnPurchaseSkinEvent>().Dispatch(skinData);
+	}
+	
+	#endregion Skins
 }

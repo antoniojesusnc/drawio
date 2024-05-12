@@ -20,6 +20,7 @@ public static class Constants
     public const string         c_PlayerLevelSave = "Lvl";
     public const string         c_VibrationSave = "Vibration";
     public const string         c_PlayerCoins = "Coins";
+    public const string         c_PurchasedSkins = "PurchasedSkins";
     
     // Cohorts
     public const string         c_CohortScalingBombs = "ScalingBombs";
