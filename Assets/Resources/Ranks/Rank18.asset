@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461a7cbb8adad420b8e18381b2ab776e, type: 3}
+  m_Name: Rank18
+  m_EditorClassIdentifier: 
+  m_Icon: {fileID: 21300000, guid: bd880d3c77afc4c868ef55e5f951d9f2, type: 3}
+  m_RankName: CHALLENGER

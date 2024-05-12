@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9c3b8e0d081451e8cee8693cc92086, type: 3}
+  m_Name: Zoning_4
+  m_EditorClassIdentifier: 
+  m_Order: 4
+  m_TopBgColor: {r: 1, g: 0.9019608, b: 0.627451, a: 1}
+  m_BottomBgColor: {r: 0.9467456, g: 0.8916522, b: 0.97794116, a: 1}

@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca57448139916471c8cd2921f0994aaf, type: 3}
+  m_Name: Skin05
+  m_EditorClassIdentifier: Assembly-CSharp::SkinDatas
+  Color: {fileID: 11400000, guid: d56d59878ff514477a1523459c482b23, type: 2}
+  Brush: {fileID: 11400000, guid: efeaa1ffb6e62475c9e04a0b60b7755e, type: 2}

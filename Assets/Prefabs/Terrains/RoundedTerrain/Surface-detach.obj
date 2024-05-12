@@ -1,0 +1,27 @@
+# Exported from ProBuilder
+# http://www.procore3d.com/probuilder
+# 08/23/2018 11:36:08
+
+mtllib ./Surface-detach.mtl
+o Surface-detach
+
+g Surface-detach
+v 32.7016 0 14.93582
+v -36.25 0 -7.467914
+v -10.90053 0 -14.93582
+v 36.25 0 -7.467914
+
+vn 0 1 0
+vn 0 1 0
+vn 0 1 0
+vn 0 1 0
+
+vt 0.9720591 0.3466357
+vt 0.7361418 0.4232899
+vt 0.8228748 0.4488413
+vt 0.9841999 0.4232898
+
+g Surface-detach
+usemtl Ground
+f 1/1/1 4/4/4 3/3/3 2/2/2
+

@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ecc05044e2e451ea31001ef82ea541, type: 3}
+  m_Name: SizeUp
+  m_EditorClassIdentifier: 
+  m_Probability: 1
+  m_Prefab: {fileID: 1401390497250440, guid: f9c825b9671fd4eb1ab01769ab46eb84, type: 2}
