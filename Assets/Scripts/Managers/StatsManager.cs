@@ -168,4 +168,18 @@ public class StatsManager : SingletonMB<StatsManager>
 	}
 
 	#endregion
+
+	#region Coins
+
+	public int GetCoins()
+	{
+		return (PlayerPrefs.GetInt(Constants.c_PlayerCoins, 0));
+	}
+	
+	public void AddCoins(int coinsToAdd)
+	{
+		PlayerPrefs.SetInt(Constants.c_PlayerCoins, GetCoins()+coinsToAdd);
+	}
+
+	#endregion
 }

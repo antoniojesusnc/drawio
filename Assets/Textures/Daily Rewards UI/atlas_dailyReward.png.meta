@@ -1,12 +1,39 @@
 fileFormatVersion: 2
 guid: 39325654a2221dc458c1fa88ca04dff7
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 2463759456128396958
+    second: atlas_dailyReward_0
+  - first:
+      213: -7400069864506237095
+    second: atlas_dailyReward_1
+  - first:
+      213: -1931970401358502097
+    second: atlas_dailyReward_2
+  - first:
+      213: -3855106920362307032
+    second: atlas_dailyReward_3
+  - first:
+      213: 7570446745013697341
+    second: atlas_dailyReward_4
+  - first:
+      213: -4592534090065912394
+    second: atlas_dailyReward_5
+  - first:
+      213: -693654105590074622
+    second: atlas_dailyReward_6
+  - first:
+      213: 4722988901411946800
+    second: atlas_dailyReward_7
+  - first:
+      213: -858961509377097275
+    second: atlas_dailyReward_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -34,24 +61,24 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: -1
-    wrapV: -1
+    wrapU: 1
+    wrapV: 1
     wrapW: -1
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
-  spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -97,11 +124,200 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: atlas_dailyReward_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 715
+        width: 458
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 80, y: 3, z: 80, w: 80}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9eea8afb28013220800000000000000
+      internalID: 2463759456128396958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_dailyReward_1
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 825
+        width: 98
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95f580d5aabad4990800000000000000
+      internalID: -7400069864506237095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_dailyReward_2
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 836
+        width: 81
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f27257ee7234035e0800000000000000
+      internalID: -1931970401358502097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_dailyReward_3
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 800
+        width: 164
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82297a06ea8ef7ac0800000000000000
+      internalID: -3855106920362307032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_dailyReward_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 451
+        width: 454
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3bbd836431af0960800000000000000
+      internalID: 7570446745013697341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_dailyReward_5
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 595
+        width: 402
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bddfbec39a0440c0800000000000000
+      internalID: -4592534090065912394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_dailyReward_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 167
+        width: 470
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 203ff4f1445af56f0800000000000000
+      internalID: -693654105590074622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_dailyReward_7
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 400
+        width: 410
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03185c2e16d6b8140800000000000000
+      internalID: 4722988901411946800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas_dailyReward_8
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 25
+        width: 255
+        height: 285
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c148d5ee0b5414f0800000000000000
+      internalID: -858961509377097275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

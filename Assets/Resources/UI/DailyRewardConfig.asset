@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54179cdb584b165469d3a344be7b429a, type: 3}
+  m_Name: DailyRewardConfig
+  m_EditorClassIdentifier: 
+  <DailyRewardItemPrefab>k__BackingField: {fileID: 5129788360214152891, guid: 477f2aa633c01e94981aef9d2f2bc8e5,
+    type: 3}
+  DailyReward:
+  - <Day>k__BackingField: 1
+    <Reward>k__BackingField: 100
+    <GraphicsToShow>k__BackingField:
+    - {fileID: -1931970401358502097, guid: 39325654a2221dc458c1fa88ca04dff7, type: 3}
+  - <Day>k__BackingField: 2
+    <Reward>k__BackingField: 100
+    <GraphicsToShow>k__BackingField:
+    - {fileID: -1931970401358502097, guid: 39325654a2221dc458c1fa88ca04dff7, type: 3}
+  - <Day>k__BackingField: 3
+    <Reward>k__BackingField: 150
+    <GraphicsToShow>k__BackingField:
+    - {fileID: -1931970401358502097, guid: 39325654a2221dc458c1fa88ca04dff7, type: 3}
+    - {fileID: -1931970401358502097, guid: 39325654a2221dc458c1fa88ca04dff7, type: 3}
+  - <Day>k__BackingField: 4
+    <Reward>k__BackingField: 150
+    <GraphicsToShow>k__BackingField:
+    - {fileID: -1931970401358502097, guid: 39325654a2221dc458c1fa88ca04dff7, type: 3}
+    - {fileID: -1931970401358502097, guid: 39325654a2221dc458c1fa88ca04dff7, type: 3}
+  - <Day>k__BackingField: 5
+    <Reward>k__BackingField: 200
+    <GraphicsToShow>k__BackingField:
+    - {fileID: -1931970401358502097, guid: 39325654a2221dc458c1fa88ca04dff7, type: 3}
+    - {fileID: -1931970401358502097, guid: 39325654a2221dc458c1fa88ca04dff7, type: 3}
+    - {fileID: -1931970401358502097, guid: 39325654a2221dc458c1fa88ca04dff7, type: 3}
+  - <Day>k__BackingField: 6
+    <Reward>k__BackingField: 300
+    <GraphicsToShow>k__BackingField:
+    - {fileID: -1931970401358502097, guid: 39325654a2221dc458c1fa88ca04dff7, type: 3}
+    - {fileID: -1931970401358502097, guid: 39325654a2221dc458c1fa88ca04dff7, type: 3}
+    - {fileID: -1931970401358502097, guid: 39325654a2221dc458c1fa88ca04dff7, type: 3}
+  - <Day>k__BackingField: 7
+    <Reward>k__BackingField: 500
+    <GraphicsToShow>k__BackingField:
+    - {fileID: -1931970401358502097, guid: 39325654a2221dc458c1fa88ca04dff7, type: 3}
+    - {fileID: -1931970401358502097, guid: 39325654a2221dc458c1fa88ca04dff7, type: 3}
+    - {fileID: -1931970401358502097, guid: 39325654a2221dc458c1fa88ca04dff7, type: 3}

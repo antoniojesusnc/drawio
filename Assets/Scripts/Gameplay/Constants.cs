@@ -19,7 +19,8 @@ public static class Constants
 	public const string         c_PlayerXPSave = "XP";
     public const string         c_PlayerLevelSave = "Lvl";
     public const string         c_VibrationSave = "Vibration";
-
+    public const string         c_PlayerCoins = "Coins";
+    
     // Cohorts
     public const string         c_CohortScalingBombs = "ScalingBombs";
     public const string         c_CohortForceMove = "ForceMove";
@@ -53,4 +54,9 @@ public static class Constants
 
     // IAP
     public const string			c_NoAdsBundleID = "com.voodoo.drawdotio.noads";
+    
+    // Daily Reward
+    public const string c_DailyRewardLastClaimedDataKey = "DailyRewardLastClaimedDataKey";
+    public const string c_DailyRewardLastClaimedIndexKey = "DailyRewardLastClaimedKey";
+    
 }
