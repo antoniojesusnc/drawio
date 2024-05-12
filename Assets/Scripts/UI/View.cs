@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class View<T> : SingletonMB<T> where T : MonoBehaviour
 {
-	public float			m_FadeInDuration = 0.3f;
-	public float 			m_FadeOutDuration = 0.3f;
-	public CanvasGroup      m_Group;
+	public float m_FadeInDuration = 0.3f;
+	public float m_FadeOutDuration = 0.3f;
+	public CanvasGroup m_Group;
 
-	protected bool 			m_Visible;
+	protected bool m_Visible;
 
 	// Cache
-	protected GameManager	m_GameManager;
+	protected GameManager m_GameManager;
 
 	// Buffers
-	private float 			m_StartTime;
-	private float 			m_Duration;
-	private bool			m_InTransition;
-	private bool 			m_InOrOut;
+	private float m_StartTime;
+	private float m_Duration;
+	private bool m_InTransition;
+	private bool m_InOrOut;
 
 	protected virtual void Awake()
 	{
@@ -33,10 +33,13 @@ public class View<T> : SingletonMB<T> where T : MonoBehaviour
 		m_GameManager.onGamePhaseChanged += OnGamePhaseChanged;
 	}
 
-	protected virtual void OnGamePhaseChanged (GamePhase _GamePhase) {}
+	protected virtual void OnGamePhaseChanged(GamePhase _GamePhase)
+	{
+	}
 
 	public void Transition(bool _InOrOut)
 	{
+		OnBeginTransition(_InOrOut);
 		m_Visible = _InOrOut;
 
 		m_StartTime = Time.time;
@@ -46,7 +49,7 @@ public class View<T> : SingletonMB<T> where T : MonoBehaviour
 		m_Group.interactable = false;
 		m_Group.blocksRaycasts = false;
 	}
-
+	
 	protected virtual void Update()
 	{
 		if (m_InTransition)
@@ -64,7 +67,12 @@ public class View<T> : SingletonMB<T> where T : MonoBehaviour
 				m_Group.alpha = m_InOrOut ? 1.0f : 0.0f;
 				m_Group.interactable = m_InOrOut;
 				m_Group.blocksRaycasts = m_InOrOut;
+
+				OnFinishTransition(m_InOrOut);
 			}
 		}
 	}
+
+	public virtual void OnBeginTransition(bool _InOrOut){}
+	public virtual void OnFinishTransition(bool _InOrOut) { }
 }

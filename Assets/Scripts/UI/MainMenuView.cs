@@ -14,13 +14,19 @@ public class MainMenuView : View<MainMenuView>
     public List<Image> m_ColoredImages;
     public List<Text> m_ColoredTexts;
 
+    
+    [Header("BrushSelector")]
+    public GameObject m_brushSelectorParent; 
     public GameObject m_BrushGroundLight;
     public GameObject m_BrushesPrefab;
     public int m_IdSkin = 0;
-    public GameObject m_PointsPerRank;
-    public RankingView m_RankingView;
+    
+    [Header("SkinSelector")]
+    public GameObject m_skingSelectorParent;
 
     [Header("Ranks")]
+    public GameObject m_PointsPerRank;
+    public RankingView m_RankingView;
     public string[] m_Ratings;
 
     private StatsManager m_StatsManager;
@@ -38,6 +44,12 @@ public class MainMenuView : View<MainMenuView>
         if (m_GameManager.currentPhase == GamePhase.MAIN_MENU)
             m_GameManager.ChangePhase(GamePhase.LOADING);
     }
+    
+    public void OnSkinSelectionButton()
+    {
+        if (m_GameManager.currentPhase == GamePhase.MAIN_MENU)
+            m_GameManager.ChangePhase(GamePhase.SKIN_SELECTOR);
+    }
 
     protected override void OnGamePhaseChanged(GamePhase _GamePhase)
     {
@@ -50,6 +62,7 @@ public class MainMenuView : View<MainMenuView>
                 Transition(true);
                 break;
 
+            case GamePhase.SKIN_SELECTOR:
             case GamePhase.LOADING:
                 m_BrushGroundLight.SetActive(false);
 
@@ -79,6 +92,8 @@ public class MainMenuView : View<MainMenuView>
             
         m_RankingView.gameObject.SetActive(true);
         m_RankingView.RefreshNormal();
+        
+        m_skingSelectorParent.GetComponent<SkinSelectorMainMenu>().Set(_Color);
     }
 
     public void OnSetPlayerName(string _Name)
