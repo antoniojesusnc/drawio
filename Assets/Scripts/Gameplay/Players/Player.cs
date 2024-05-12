@@ -315,6 +315,11 @@ public abstract class Player : MappedObject, IDrawLine
 	
 	private void CheckForPlayer(GameObject collisionGameObject)
 	{
+		if (!FeatureManager.Instance.BrushCollider)
+		{
+			return;
+		}
+		
 		Player player = collisionGameObject.GetComponent<Player>();
 		if (player != null && player != this)
 			PushAway(player);

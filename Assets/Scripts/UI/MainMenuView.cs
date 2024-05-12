@@ -16,13 +16,13 @@ public class MainMenuView : View<MainMenuView>
 
     
     [Header("BrushSelector")]
-    public GameObject m_brushSelectorParent; 
+    public GameObject m_brushSelector; 
     public GameObject m_BrushGroundLight;
     public GameObject m_BrushesPrefab;
     public int m_IdSkin = 0;
     
     [Header("SkinSelector")]
-    public GameObject m_skingSelectorParent;
+    public GameObject m_skingSelector;
 
     [Header("Ranks")]
     public GameObject m_PointsPerRank;
@@ -74,6 +74,24 @@ public class MainMenuView : View<MainMenuView>
         }
     }
 
+    protected override void Update() 
+    {
+        base.Update();
+        
+        CheckScreenSelector();
+    }
+
+    private void CheckScreenSelector()
+    {
+        var useScreenSelector = FeatureManager.Instance.UseScreenSelector;
+        if (useScreenSelector && !m_skingSelector.activeSelf
+            || !useScreenSelector && !m_brushSelector.activeSelf)
+        {
+            m_skingSelector.SetActive(useScreenSelector);
+            m_brushSelector.SetActive(!useScreenSelector);
+        }
+    }
+
     public void SetTitleColor(Color _Color)
     {
         m_BrushesPrefab.SetActive(true);
@@ -93,7 +111,7 @@ public class MainMenuView : View<MainMenuView>
         m_RankingView.gameObject.SetActive(true);
         m_RankingView.RefreshNormal();
         
-        m_skingSelectorParent.GetComponent<SkinSelectorMainMenu>().Set(_Color);
+        m_skingSelector.GetComponent<SkinSelectorMainMenu>().Set(_Color);
     }
 
     public void OnSetPlayerName(string _Name)

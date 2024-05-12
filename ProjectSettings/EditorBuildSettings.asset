@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: b4f61baa764c36d43b19281bbb3d59c3
+  - enabled: 1
+    path: Packages/com.pixeption.mck/Assets/LogConsole.unity
+    guid: 6d2ee6336ff704f55b20f3b62801afd5
   m_configObjects: {}

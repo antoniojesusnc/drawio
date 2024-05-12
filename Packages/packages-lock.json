@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.pixeption.mck": {
+      "version": "https://github.com/pixeption/MobileConsoleKit.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b94a04b6da35429dfcec0d9c23ef9bdc5d16840a"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,

@@ -7358,6 +7358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13843e817b933419f9e0ac70c05ce8e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _randomSpeed: 1
+  _speed: 60
 --- !u!1 &1601250567354452
 GameObject:
   m_ObjectHideFlags: 0
@@ -18501,11 +18503,11 @@ MonoBehaviour:
   - {fileID: 114630280725045258}
   m_ColoredTexts:
   - {fileID: 114692595092085978}
-  m_brushSelectorParent: {fileID: 1054396209444862}
+  m_brushSelector: {fileID: 1054396209444862}
   m_BrushGroundLight: {fileID: 1779954615129550}
   m_BrushesPrefab: {fileID: 1043197933159812}
   m_IdSkin: 0
-  m_skingSelectorParent: {fileID: 2165781557355797593}
+  m_skingSelector: {fileID: 2165781557355797593}
   m_PointsPerRank: {fileID: 1179986923556148}
   m_RankingView: {fileID: 114299393393301170}
   m_Ratings:

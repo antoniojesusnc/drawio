@@ -10,8 +10,13 @@ public class DailyRewardManager : SingletonMB<DailyRewardManager>
     private int _currentIndex;
     private DateTime _lastClaimed;
     
-    void Awake()
+    void Start()
     {
+        if (!FeatureManager.Instance.DailyReward)
+        {
+            return;
+        }
+        
         LoadLastClaimedData();
         CheckIfClaimReward();
         ShowIfDailyRewardView();
