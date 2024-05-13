@@ -12,8 +12,8 @@ public class TextNumberAnimation : GenericDotweenConfig<TextMeshProUGUI, int, in
     [field: SerializeField]
     public Ease _ease;
 
-    public override void PlayEffect(TextMeshProUGUI text, int initialNumber, int endNumber)
+    public override Tween PlayEffect(TextMeshProUGUI text, int initialNumber, int endNumber)
     {
-        DOTween.To(() => initialNumber, (number) => text.text = number.ToString(), endNumber, Duration).SetEase(_ease);
+        return DOTween.To(() => initialNumber, (number) => text.text = number.ToString(), endNumber, Duration).SetEase(_ease);
     }
 }

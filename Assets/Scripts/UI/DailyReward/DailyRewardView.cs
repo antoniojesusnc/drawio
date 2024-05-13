@@ -1,4 +1,7 @@
-﻿using DG.Tweening;
+﻿using System.Collections.Generic;
+using deVoid.Utils;
+using DG.Tweening;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class DailyRewardView : View<DailyRewardView>
@@ -9,6 +12,8 @@ public class DailyRewardView : View<DailyRewardView>
 
     private bool _claimed = false;
 
+    private List<DailyRewardItemView> _itemRewardList = new List<DailyRewardItemView>();
+        
     void Start()
     {
         _config = DailyRewardManager.Instance.DailyRewardConfig;
@@ -23,6 +28,7 @@ public class DailyRewardView : View<DailyRewardView>
             var rewardItemView = GetRewardItemView();
             rewardItemView.SetConfig(_config.DailyReward[i]);
             rewardItemView.SetAsClaimed(DailyRewardManager.Instance.IsClaimed(_config.DailyReward[i]));
+            _itemRewardList.Add(rewardItemView);
         }
 
         foreach (Transform child in _scrollParent)
@@ -58,21 +64,35 @@ public class DailyRewardView : View<DailyRewardView>
     {
         if (!_claimed)
         {
-            DailyRewardManager.Instance.Claim();
+            var firstUnclaimedPosition = GetPositionOfFirstUnclaimed();
+            DailyRewardManager.Instance.Claim(firstUnclaimedPosition);
             _claimed = true;
-            ClaimAnimation();
+        }
+        
+        Signals.Get<OnCoinAnimationFinishedEvent>().AddListener(OnCoinAnimationFinished);
+    }
+
+    private void OnCoinAnimationFinished()
+    {
+        Signals.Get<OnCoinAnimationFinishedEvent>().RemoveListener(OnCoinAnimationFinished);
+        Close();
+    }
+
+    private Vector3 GetPositionOfFirstUnclaimed()
+    {
+        for (int i = 0; i < _itemRewardList.Count; i++)
+        {
+            if (!_itemRewardList[i].IsClaimed)
+            {
+                return _itemRewardList[i].transform.position;
+            }
         }
 
-        DOVirtual.DelayedCall(_config.AnimationDuration, Close);
+        return Vector3.zero;
     }
 
     private void Close()
     {
         GameManager.Instance.ChangePhase(GamePhase.MAIN_MENU);
-    }
-
-
-    private void ClaimAnimation()
-    {
     }
 }

@@ -121,11 +121,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CLAIM !
+  m_text: Claim!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: def7416a1757e2d468ca305cc74a497c, type: 2}
-  m_sharedMaterial: {fileID: -5739231606359255085, guid: def7416a1757e2d468ca305cc74a497c,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -191,9 +190,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 3094593776789774505}
-    characterCount: 7
+    characterCount: 6
     spriteCount: 0
-    spaceCount: 1
+    spaceCount: 0
     wordCount: 1
     linkCount: 0
     lineCount: 1
@@ -639,7 +638,7 @@ RectTransform:
   - {fileID: 418171433085413960}
   - {fileID: 4248550309579778584}
   m_Father: {fileID: 5529016031119973699}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -896,7 +895,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3249267537485062596}
   m_HandleRect: {fileID: 3354363647984271530}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -932,8 +931,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7145703341055674887}
-  - {fileID: 2414854022016198589}
   - {fileID: 6955110146938580484}
+  - {fileID: 2414854022016198589}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -966,7 +965,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6835190950283244677}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -1228,7 +1227,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0.0005493164, y: -0.0012817383}
+  m_AnchoredPosition: {x: 0.0005493164, y: -0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &7610846899591460813
@@ -1475,7 +1474,7 @@ PrefabInstance:
     - target: {fileID: 2110753356884851668, guid: 8fa98d14cdfb063439543bc779464a9b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2110753356884851668, guid: 8fa98d14cdfb063439543bc779464a9b,
         type: 3}
@@ -1567,10 +1566,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4312346194971556980, guid: 8fa98d14cdfb063439543bc779464a9b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7337570157564988268, guid: 8fa98d14cdfb063439543bc779464a9b,
         type: 3}
       propertyPath: m_Name
       value: CoinCounterView
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337570157564988268, guid: 8fa98d14cdfb063439543bc779464a9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fa98d14cdfb063439543bc779464a9b, type: 3}

@@ -49,10 +49,10 @@ public class DailyRewardManager : SingletonMB<DailyRewardManager>
         }
     }
 
-    public void Claim()
+    public void Claim(Vector3 originPosition)
     {
         var dailyRewardConfigData = DailyRewardConfig.DailyReward[_currentIndex];
-        StatsManager.Instance.AddCoins(dailyRewardConfigData.Reward);
+        StatsManager.Instance.AddCoins(dailyRewardConfigData.Reward, originPosition);
         
         _currentIndex++;
         SaveClaimData();

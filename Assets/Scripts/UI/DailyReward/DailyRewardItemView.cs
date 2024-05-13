@@ -20,6 +20,8 @@ public class DailyRewardItemView : MonoBehaviour
     [SerializeField] 
     private GameObject _claimedObject;
 
+    public bool IsClaimed { get; private set; }
+    
     private void Awake()
     {
         _claimedObject.gameObject.SetActive(false);
@@ -62,6 +64,7 @@ public class DailyRewardItemView : MonoBehaviour
 
     public void SetAsClaimed(bool isClaimed)
     {
+        IsClaimed = isClaimed;
         _claimedObject.SetActive(isClaimed);
     }
 }

@@ -179,10 +179,10 @@ public class StatsManager : SingletonMB<StatsManager>
 		return (PlayerPrefs.GetInt(Constants.c_PlayerCoins, 0));
 	}
 	
-	public void AddCoins(int coinsToAdd)
+	public void AddCoins(int coinsToAdd, Vector3 originPosition = default)
 	{
 		PlayerPrefs.SetInt(Constants.c_PlayerCoins, GetCoins()+coinsToAdd);
-		Signals.Get<OnCoinIncreasedEvent>().Dispatch(coinsToAdd);
+		Signals.Get<OnCoinIncreasedEvent>().Dispatch(coinsToAdd, originPosition);
 	}
 
 	#endregion Coins

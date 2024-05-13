@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54179cdb584b165469d3a344be7b429a, type: 3}
   m_Name: DailyRewardConfig
   m_EditorClassIdentifier: 
-  <AnimationDuration>k__BackingField: 1
+  <RewardParticle>k__BackingField: {fileID: 0}
+  <AnimationDuration>k__BackingField: 4
   <DailyRewardItemPrefab>k__BackingField: {fileID: 5129788360214152891, guid: 477f2aa633c01e94981aef9d2f2bc8e5,
     type: 3}
   DailyReward:
