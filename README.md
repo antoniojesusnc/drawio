@@ -21,6 +21,7 @@ Tasks:
 - You can emphasize the collision with for example an animation and particle effects
 ```
 I noticed that the brushes already had a collider on them, so I thought I could use it to create collisions. After investigating further, I realized that the power-ups were being collected in a certain way, so I used that same logic to push the player away when they collided with an object. I set it up so that the force of the push is determined by the size of the object that the player collides with.
+![Collisions](https://github.com/antoniojesusnc/drawio/assets/2783284/02eb5cde-d864-4025-9e20-7eee0b9ba9f9)
 
 ### Feature 2: Skin Selection Screen
 ```
@@ -31,8 +32,8 @@ Tasks:
 -- Enhance the screen with for example additional animations and/or particle effects
 - Replace the existing skin selection feature (present in the main menu) with a button that opens the Skin Selection Screen (see mock-up 2)
 ```
-
 I created a new view called "SkinSelectorView". It has a preview and a list of all the skins in a scrollable grid. 
+![SkinSelector](https://github.com/antoniojesusnc/drawio/assets/2783284/4c0b0094-652a-4f8f-a770-bedb2514b3a7)
 
 ### Feature 3: Daily Rewards
 ```
@@ -45,6 +46,8 @@ Tasks:
 ```
 To implement the daily rewards feature, I created two new components - a view named "DailyRewardView" and a manager named "DailyRewardManager". The calculations for the daily reward are handled by the manager. The daily reward view will be displayed at the beginning of each day if the player has not yet claimed their reward.
 
+![DailyReward](https://github.com/antoniojesusnc/drawio/assets/2783284/b97745ec-c0e2-4708-8bdd-d6f15a205bc6)
+
 ### Feature 4: Custom Feature
 ```
 Tasks:
@@ -55,6 +58,7 @@ Tasks:
 As a custom feature, I have added a skin selector to the game which allows users to purchase some skins using the money obtained from the daily reward. I have also added different skins to make the game more attractive.
 To use this feature, open the game and access the skin selector. You will see some skins with a cost displayed on them. You can only select these skins after purchasing them. Currently, the only way to obtain money is through the daily reward.
 However, it would be ideal to add more ways for users to earn coins.
+![Store](https://github.com/antoniojesusnc/drawio/assets/2783284/fcf240bc-d448-421f-b503-206f7acbc03e)
 
 ### Feature 5: Debug Menu
 ```
@@ -64,6 +68,8 @@ However, it would be ideal to add more ways for users to earn coins.
 ```
 To access the debug menu, you need to add the package from this git repository [MobileConsoleKit](https://github.com/pixeption/MobileConsoleKit). In this package, you can enable or disable a console log with various commands. To use it, simply press the log button at the bottom of the screen. Then, click on the wheel at the bottom to access the control flags.
 With this console, you can easily send logs and add commands. You can find the scripts in the Console folder to see what has been added.
+
+![Console](https://github.com/antoniojesusnc/drawio/assets/2783284/1ce02e82-97f0-4e48-8e06-8acb589d90e0)
 
 ## Conclusion
 This is the test that I made. Firstly, thank you for the opportunity. Secondly, the test was interesting. Adding different views and functionality allowed me to showcase my skills. Although it may be a little lengthy, I believe it is still acceptable.
